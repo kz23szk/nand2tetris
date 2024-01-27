@@ -14,5 +14,52 @@ CHIP Mux4Way16 {
     OUT out[16];
     
     PARTS:
-    //// Replace this comment with your code.
+    Mux(a=a[0], b=b[0], sel=sel[0], out=aorb0);
+    Mux(a=c[0], b=d[0], sel=sel[0], out=cord0);
+    Mux(a=aorb0, b=cord0, sel=sel[1], out=out[0]);    
+    Mux(a=a[1], b=b[1], sel=sel[0], out=aorb1);
+    Mux(a=c[1], b=d[1], sel=sel[0], out=cord1);
+    Mux(a=aorb1, b=cord1, sel=sel[1], out=out[1]);    
+    Mux(a=a[2], b=b[2], sel=sel[0], out=aorb2);
+    Mux(a=c[2], b=d[2], sel=sel[0], out=cord2);
+    Mux(a=aorb2, b=cord2, sel=sel[1], out=out[2]);    
+    Mux(a=a[3], b=b[3], sel=sel[0], out=aorb3);
+    Mux(a=c[3], b=d[3], sel=sel[0], out=cord3);
+    Mux(a=aorb3, b=cord3, sel=sel[1], out=out[3]);    
+    Mux(a=a[4], b=b[4], sel=sel[0], out=aorb4);
+    Mux(a=c[4], b=d[4], sel=sel[0], out=cord4);
+    Mux(a=aorb4, b=cord4, sel=sel[1], out=out[4]);    
+    Mux(a=a[5], b=b[5], sel=sel[0], out=aorb5);
+    Mux(a=c[5], b=d[5], sel=sel[0], out=cord5);
+    Mux(a=aorb5, b=cord5, sel=sel[1], out=out[5]);    
+    Mux(a=a[6], b=b[6], sel=sel[0], out=aorb6);
+    Mux(a=c[6], b=d[6], sel=sel[0], out=cord6);
+    Mux(a=aorb6, b=cord6, sel=sel[1], out=out[6]);    
+    Mux(a=a[7], b=b[7], sel=sel[0], out=aorb7);
+    Mux(a=c[7], b=d[7], sel=sel[0], out=cord7);
+    Mux(a=aorb7, b=cord7, sel=sel[1], out=out[7]);    
+    Mux(a=a[8], b=b[8], sel=sel[0], out=aorb8);
+    Mux(a=c[8], b=d[8], sel=sel[0], out=cord8);
+    Mux(a=aorb8, b=cord8, sel=sel[1], out=out[8]);    
+    Mux(a=a[9], b=b[9], sel=sel[0], out=aorb9);
+    Mux(a=c[9], b=d[9], sel=sel[0], out=cord9);
+    Mux(a=aorb9, b=cord9, sel=sel[1], out=out[9]);    
+    Mux(a=a[10], b=b[10], sel=sel[0], out=aorb10);
+    Mux(a=c[10], b=d[10], sel=sel[0], out=cord10);
+    Mux(a=aorb10, b=cord10, sel=sel[1], out=out[10]);    
+    Mux(a=a[11], b=b[11], sel=sel[0], out=aorb11);
+    Mux(a=c[11], b=d[11], sel=sel[0], out=cord11);
+    Mux(a=aorb11, b=cord11, sel=sel[1], out=out[11]);    
+    Mux(a=a[12], b=b[12], sel=sel[0], out=aorb12);
+    Mux(a=c[12], b=d[12], sel=sel[0], out=cord12);
+    Mux(a=aorb12, b=cord12, sel=sel[1], out=out[12]);    
+    Mux(a=a[13], b=b[13], sel=sel[0], out=aorb13);
+    Mux(a=c[13], b=d[13], sel=sel[0], out=cord13);
+    Mux(a=aorb13, b=cord13, sel=sel[1], out=out[13]);    
+    Mux(a=a[14], b=b[14], sel=sel[0], out=aorb14);
+    Mux(a=c[14], b=d[14], sel=sel[0], out=cord14);
+    Mux(a=aorb14, b=cord14, sel=sel[1], out=out[14]);    
+    Mux(a=a[15], b=b[15], sel=sel[0], out=aorb15);
+    Mux(a=c[15], b=d[15], sel=sel[0], out=cord15);
+    Mux(a=aorb15, b=cord15, sel=sel[1], out=out[15]);    
 }
