@@ -1,0 +1,16 @@
+// 正負を反転する　0のときは何もしない
+CHIP Rev16 {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    // 0か判定する
+    Or8Way(in=in[0..7],out=notAllZero0to7);
+    Or8Way(in=in[8..15],out=notAllZero8to15);
+    Or(a=notAllZero0to7,b=notAllZero8to15,out=notZero);
+    // 反転 
+    Not16(in=in,out=notin);
+    Add16(a=notin,b[0]=true,b[1..15]=false,out=negin);
+    // ゼロのときそのまま、そうでなければ反転する
+    Mux16(a=in,b=negin,sel=notZero,out=out);
+}
