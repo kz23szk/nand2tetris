@@ -41,5 +41,28 @@ CHIP ALU {
         ng;      // if (out < 0)  equals 1, else 0
 
     PARTS:
-    //// Replace this comment with your code.
+    // 0化
+    Mux16(a=x,b=false,sel=zx,out=x1);
+    Mux16(a=y,b=false,sel=zy,out=y1);
+    // 正負を反転
+    Not16(in=x1,out=revx1);
+    Not16(in=y1,out=revy1);
+    Mux16(a=x1,b=revx1,sel=nx,out=x2);
+    Mux16(a=y1,b=revy1,sel=ny,out=y2);
+    // 関数fを通す
+    Add16(a=x2,b=y2,out=xplusy);
+    And16(a=x2,b=y2,out=xandy);
+    Mux16(a=xandy,b=xplusy,sel=f,out=fxy);
+    // 正負を反転
+    Not16(in=fxy,out=negfxy);
+    Mux16(a=fxy,b=negfxy,sel=no,out=out);
+    // 0かどうか判定
+    Mux16(a=fxy,b=negfxy,sel=no,out[0..7]=out1st,out[8..15]=out2nd);
+    Or8Way(in=out1st,out=notAllZero1st);
+    Or8Way(in=out2nd,out=notAllZero2nd);
+    Or(a=notAllZero1st,b=notAllZero2nd,out=notAllZero);
+    Not(in=notAllZero,out=zr);
+    // 正負の判定 
+    Mux16(a=fxy,b=negfxy,sel=no,out[15]=topbit);
+    And(a=true,b=topbit,out=ng);   
 }
